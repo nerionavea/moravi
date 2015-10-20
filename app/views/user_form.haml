@@ -1,0 +1,26 @@
+=styled_flash
+.form-group
+	%label.col-md-2.control-label{:for => 'inputNick'}
+		Nombre de usuario
+	.col-md-10
+		%input.form-control#inputNick{:type => 'text', :placeholder => 'Nombre de usuario', :value => "#{@usuario.nick}", :name => "user[nick]", :required => 'true'}
+.form-group
+	%label.col-md-2.control-label{:for => 'inputName'}
+		Nombre
+	.col-md-10
+		%input.form-control#inputName{:type => 'text', :placeholder => 'Nombre de Pila', :value => "#{@usuario.nombre}", :name => "user[nombre]", :required => 'true'}
+.form-group
+	%label.col-md-2.control-label{:for => 'inputLastName'}
+		Apellido
+	.col-md-10
+		%input.form-control#inputLastName{:type => 'text', :placeholder => 'Apellido', :value => "#{@usuario.apellido}", :name => "user[apellido]", :required => 'true'}
+.form-group
+	%label.col-md-2.control-label{:for => 'inputPass'}
+		Contraseña
+	.col-md-10
+		%input.form-control#inputPass{:type => 'password', :placeholder => 'Contraseña', :name => "user[password]", :required => 'true', :pattern => ".{8,16}", 'data-toggle' => 'tooltip', 'data-placement' => 'right', :title => "De 8 a 16 carácteres"}
+.form-group
+	%label.col-md-2.control-label{:for => 'inputPass2'}
+		Confirmar Contraseña
+	.col-md-10
+		%input.form-control#inputPass2{:type => 'password', :placeholder => 'Repetir contraseña', :name => "verify[password]", :required => 'true', :pattern => ".{8,16}", 'data-toggle' => 'tooltip', 'data-placement' => 'right', :title => "Repita su contraseña"}

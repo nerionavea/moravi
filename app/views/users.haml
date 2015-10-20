@@ -1,0 +1,26 @@
+%h3 Usuarios
+=styled_flash
+%table.table.table-hover
+	%thead
+		%td
+			Nombre
+		%td
+			Apellido
+		%td
+			Nombre de Usuario
+		%td
+			Ids Cobrador
+	-@usuarios.each do |usuario|
+		%tr.customer_row{:id => "#{usuario.id}", 'data-toggle' => 'popover', 'data-trigger' => 'click', 'data-content' => "<a class = 'btn btn-default' href = '/admin/users/#{usuario.id}/edit' data-toggle = 'tooltip' data-placement = 'bottom' title = 'Editar'> <span class = 'glyphicon glyphicon-pencil'></span></a> <a class = 'btn btn-default btnCobradores' id='#{usuario.id}' href = '/admin/users/#{usuario.id}/cobradores' data-placement = 'bottom' title = 'Cobradores'> <span class = 'glyphicon glyphicon-user'></span></a> <a class = 'btn btn-default' href = '/users/#{usuario.id}/delete' data-toggle = 'tooltip' data-placement = 'bottom' title = 'Eliminar'> <span class = 'glyphicon glyphicon-remove'></span></a> <a class = 'btn btn-default' href = '/admin/users/#{usuario.id}/record' data-toggle = 'tooltip' data-placement = 'bottom' title = 'Registro'> <span class = 'glyphicon glyphicon-th-list'></span></a>", 'data-title' => "Usuario: #{usuario.nombre} #{usuario.apellido}", 'data-html' => 'true', 'data-placement' => 'bottom'}
+			%td
+				#{usuario.nombre}
+			%td
+				#{usuario.apellido}
+			%td
+				#{usuario.nick}
+			%td
+				-usuario.cobradores.each do |cobrador|
+					cobrador.id
+%a.btn.btn-default{:type => 'button', 'aria-label' => 'Añadir Usuario', :href => '/admin/users/new', 'data-toggle' => 'tooltip', 'data-placement' => 'right', :title => 'Añadir Usuario'}
+	%span.glyphicon.glyphicon-plus
+	Añadir		

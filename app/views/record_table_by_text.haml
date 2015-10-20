@@ -1,0 +1,17 @@
+%table.table-hover.table
+	%thead
+		%td
+			Fecha
+		%td
+			Texto
+		%td
+			Enviado a
+	-@records.each do |record|
+		%tr
+			%td
+				#{record.fecha}
+			%td
+				#{record.mensaje}
+			%td
+				-record.clientes.each do |cliente|
+					#{cliente.nombre} #{cliente.apellido}

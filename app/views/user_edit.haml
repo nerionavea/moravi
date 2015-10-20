@@ -1,0 +1,7 @@
+%h3 Crear nuevo usuario
+%form.form-horizontal#userForm{:action => "/admin/users/#{@usuario.id}/edit", :method => 'post'}
+	%input{:type => 'hidden', :name => '_method', :value => 'put'}
+	= haml :user_form
+	%input.btn.btn-danger.pull-right{:type => 'submit', :value => 'Editar'}
+	%a.btn.btn-default.pull-right{:href => '/admin/users', :style => 'margin-right: 10px;'}
+		Cancelar

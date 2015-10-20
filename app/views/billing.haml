@@ -1,0 +1,35 @@
+%h4 Saldo de SMS
+%ul.list-group
+	%li.list-group-item
+		%span.badge
+			#{@bill.month} / #{@bill.year}
+		Periodo
+	%li.list-group-item
+		%span.badge
+			3000
+		Plan de SMS
+	%li.list-group-item
+		%span.badge
+			#{@smscount}
+		Mensajes Consumidos
+	%li.list-group-item
+		%span.badge
+			- restante = 3000 - @smscount.to_i
+			#{restante}
+		Mensajes restantes
+	%li.list-group-item
+		%span.badge
+			Bs. #{@total.to_i}
+		Total de cuenta
+.panel.panel-default
+	.panel-heading
+		%h3.panel-title
+			Información
+	.panel-body
+		%p
+			Recuerde que luego de consumir su paquete de 3000 Sms el costo adicional cada SMS será de 0.70Bs.F
+		%p
+			El cobro de su servicio serán los primeros de cada mes y este tendría que ser transferido en los números de cuenta suministrados por nuestro equipo
+		%p
+			Para información, dudas o reclamos comunicarse al +584262630994 o neriojose5@gmail.com
+

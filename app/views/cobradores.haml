@@ -1,0 +1,32 @@
+%h3
+	Cobradores: #{@usuario.nombre} #{@usuario.apellido}
+%table.customerlist.table.table-hover
+	%thead
+		%td
+			Selección
+		%td
+			Nombre
+		%td
+			Id_Cobrador	
+	%tr
+		%td
+			.checkbox
+				%label
+					%input.check_select_all{:type => 'checkbox',}
+					Seleccionar Todos
+		%td
+		%td
+	-@cobradores.each do |cobrador|
+		%tr
+			%td
+				.checkbox
+					%label
+						%input.check_customer{:type => 'checkbox', :value => "", :id => "#{cobrador.id}"}
+			%td
+				#{cobrador.nombre} 
+			%td
+				#{cobrador.id}
+%a.btn.btn-danger.btnSaveCobrador.pull-right{:href => '#'}
+	Aceptar
+%a.btn.btn-default.pull-right{:href => "/admin/users", :style => "margin-right => 10px"}
+	Cancelar

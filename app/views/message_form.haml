@@ -1,0 +1,46 @@
+%h2 Enviar SMS Masivo
+%section
+	= styled_flash
+.row
+	.from-inline 
+		.col-md-4 
+			%label Fecha de Cuotas
+			.input-daterange.input-group#datepicker
+				%input.form-control.customer_search_control#input_search_start_date{'data-provide' => 'datepicker', :type => "text", :placeholder => "Fecha Inicio"}
+				%span.input-group-addon
+					Hasta
+				%input.form-control.customer_search_control#input_search_end_date{:type => "text", :placeholder => "Fecha Final"}
+		.col-md-4
+			%label Cantidad de Cuotas
+			.input-group
+				%input.form-control.customer_search_control#input_search_start_cuotas{:type => "text", :placeholder => "Desde", :maxlength => "2"}
+				%span.input-group-addon
+					Hasta
+				%input.form-control.customer_search_control#input_search_end_cuotas{:type => "text", :placeholder => "Hasta", :maxlength => "2"}
+		.col-md-2
+			%label Nombre
+			%input.form-control.customer_search_control#input_search_name{:type => "text", :placeholder => "Nombre"}
+		.col-md-2
+			%label Apellido
+			%input.form-control.customer_search_control#input_search_lname{:type => "text", :placeholder => "Apellido"}
+.row
+	.col-md-12#customer_select_list{:height => "300px", :style => "overflow: scroll;"}
+.row
+	-@records.each do |record|
+		%a.col-md-4.recent-text{:href => '#'}
+			#{record.mensaje}
+.row
+	.col-md-12
+		%form
+			%textarea.form-control#smsText{:type => 'text', :name => 'smstext', :placeholder => 'Escriba su SMS...', :maxlenght => '160'}
+			%a.btn.btn-default#send_sms{:type => 'submit', :value => 'Enviar', :style => 'float: right;'}
+				Enviar
+		%h3 Ayuda
+		%p Esta es la intefáz para enviar mensajes masivos personalizados a sus clientes, si desea colocar algún dato de sus clientes en los mensaje podra hacerlo de la siguiente manera:
+		%ul
+			%li 
+				%strong (Nombre)
+				Nombre del cliente
+			%li 
+				%strong (Apellido)
+				Apellido del cliente

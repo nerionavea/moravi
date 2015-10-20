@@ -1,0 +1,50 @@
+%table.customerlist.table.table-hover
+	%thead
+		%td
+			.checkbox
+				%label
+					%input.check_select_all{:type => 'checkbox',}
+					Seleccionar Todos
+		%td
+			Nombre
+		%td
+			Apellido
+		%td
+			Cedula
+		%td
+			Número Telefónico
+		%td
+			Pedido
+		%td
+			Cuotas
+		%td
+			Ultimo Vencimiento
+		%td 
+			Cuota
+		%td
+			Saldo Total
+	-@customers.each do |customer|
+		%tr#fila-cliente
+			%td#check
+				.checkbox
+					%label
+						%input.check_customer{:type => 'checkbox', :value => "#{customer.telefono}", :id => "#{customer.cedula}"}
+			%td#nombre
+				#{customer.nombre}
+			%td#apellido
+				#{customer.apellido}
+			%td#cedula
+				#{customer.cedula}
+			%td#telefono
+				#{customer.telefono}
+			%td#num_pedido
+				#{customer.num_pedido}
+			%td#cuotas
+				#{customer.cuotas}
+			%td#ultimo_vencimiento
+				#{customer.ultimo_vencimiento}
+			%td#bs_cuota
+				#{customer.bs_cuota}
+			%td#saldo_cuota
+				#{customer.saldo_cuota}
+

@@ -1,0 +1,34 @@
+.row
+	%nav.navbar.navbar-default.navbar-fixed-top
+		.container-fluid
+			.navbar-header
+				%button.navbar-toggle.collapsed{:type => "button", "data-toggle" => "collapse", "data-target" => '#app-navbar-collapse'}
+					%span.sr-only
+						Toggle navigation
+					%span.icon-bar
+					%span.icon-bar
+					%span.icon-bar
+				%a.navbar-brand{:href => '/home'}
+					%img{:src => "/images/logo.png", :alt => 'Brand'}
+			.collapse.navbar-collapse#app-navbar-collapse
+				%ul.nav.navbar-nav.navbar-right
+					%li.dropdown
+						%a.dropdown-toggle{:href => '#', "data-toggle" => 'dropdown', :role => 'button', "aria-expanded" => 'false'}
+							#span{:class => "glyphicon glyphicon-user"}
+							#{session[:user]}
+							#span.caret
+						%ul.dropdown-menu{:role => 'menu'}
+							%li
+								- if session[:admin]
+									%a{:href => "/admin"}
+										Configuración
+									%li.divider{:role => 'separator'}
+							%li
+								%a{:href => "/logout"}
+									Cerrar sesión
+				%ul.nav.navbar-nav.navbar-right
+					%li
+						%a{:href => '/message', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom', :title => 'Envíar mensaje masivo'}
+							%span.glyphicon-envelope.glyphicon
+					%li
+						%a{:href => '/records', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom', :title => 'Todos los mensajes enviados'} Registro

@@ -1,0 +1,9 @@
+.form-group
+	%label{:for => 'cellphone'} Telefono 
+	%input.form-control{:type => 'text', :id => 'cellphone', :placeholder => 'Número telefónico', :required => 'true', :name => 'customer[cellphone]', :value => "#{@customer.cellphone}"}
+.form-group
+	%label{:for => 'first_name'} Nombre 
+	%input.form-control{:type => 'text', :id => 'first_name', :placeholder => 'Nombre', :required => 'true', :name => 'customer[first_name]', :value => "#{@customer.first_name}"}
+.form-group
+	%label{:for => 'Apellido'} Apellido
+	%input.form-control{:type => 'text', :id => 'Apellido', :placeholder => 'Apellido', :required => 'true', :name => 'customer[last_name]', :value => "#{@customer.last_name}"}

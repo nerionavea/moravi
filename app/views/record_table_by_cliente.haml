@@ -1,0 +1,16 @@
+%table.table-hover
+	%thead
+		%td
+			Fecha
+		%td
+			Cliente
+		%td
+			Textos
+	-@records.each do |record|
+		-record.clientes.each do |cliente|
+		%tr
+			%td
+				#{record.fecha}
+			%td
+				#{record.mensaje}
+			%td

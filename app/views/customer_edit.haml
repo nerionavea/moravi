@@ -1,0 +1,4 @@
+%form{:method => 'post', :action => "/customers/edit/#{@customer.id}"}
+	%input{:type => 'hidden', :name => '_method', :value => 'put'}
+	=haml :customer_form
+	%input.btn.btn-default{:type => 'submit', :value => 'Guardar'}
